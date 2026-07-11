@@ -5,7 +5,8 @@ class Plant:
         self._days = days
 
     def show(self) -> str:
-        return f"{self.name}: {round(self._height, 1)}cm, {self._days} days old"
+        height = round(self._height, 1)
+        return f"{self.name}: {height}cm, {self._days} days old"
 
     def set_height(self, new_height) -> None:
         if (new_height < 0):
