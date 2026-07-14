@@ -46,7 +46,7 @@ class Flower(Plant):
             print(f"{self.name} has not bloomed yet")
 
     def bloom(self, bloom: bool) -> None:
-        print(f"[asking the {Rose.name} to bloom]")
+        print(f"[asking the {self.name} to bloom]")
         if (bloom):
             self.is_bloomed = True
         else:
