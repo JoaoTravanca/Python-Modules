@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    name = "rose"
+    name = "Rose"
     height = "25cm"
     age = "30 days"
     print("=== Welcome to My Garden ===")

@@ -3,13 +3,13 @@ class Plant:
         self.name = name
         self.height = height
         self.days = days
-        self.grow_rate = (float(self.height) * 1.032) - float(self.height)
+        self.grow_rate = (self.height * 1.032) - self.height
 
     def show(self) -> None:
         print(f"{self.name}: {round(self.height, 1)}cm, {self.days} days old")
 
     def age(self) -> None:
-        self.days = int(self.days) + 1
+        self.days = self.days + 1
 
     def grow(self) -> None:
         self.height = self.height + self.grow_rate

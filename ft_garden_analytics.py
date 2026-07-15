@@ -1,22 +1,8 @@
 class Plant:
     def __init__(self, name: str, height: float, days: int):
         self.name = name
-        self._height = self.validate_height(height)
-        self._days = self.validate_days(days)
-
-    def validate_height(self, height) -> float:
-        if (height < 0):
-            print(f"{self.name}: Error, height can't be negative")
-            return 0.0
-        else:
-            return height
-
-    def validate_days(self, days) -> int:
-        if (days < 0):
-            print(f"{self.name}: Error, age can't be negative")
-            return 0
-        else:
-            return days
+        self._height = height
+        self._days = days
 
     def show(self) -> None:
         height = round(self._height, 1)
@@ -43,6 +29,14 @@ class Plant:
 
     def get_height(self) -> float:
         return self._height
+
+    def check_year(age) -> None:
+        result = age > 366
+        print(f"Is {age} days more than a year? -> {result}")
+
+    @classmethod
+    def anonymous_obj(cls) -> object:
+        return cls(name="Unknown", height=0, days=0)
 
 
 class Flower(Plant):
@@ -108,22 +102,17 @@ class Vegetable(Plant):
         self._height += self.nutritional_value * 2.1
 
 
+class Seed(Flower):
+    def __init__(self, name: str, height: float, days: int, color: str):
+        super().__init__(name, height, days, color)
+
+    def show(self):
+        print()
+
+
 if __name__ == "__main__":
-    print("=== Garden Plant Types ===")
-    print("=== Flower")
-    Rose = Flower("Rose", 15.0, 10, "red")
-    Rose.show()
-    Rose.bloom(True)
-    Rose.show()
-    print("")
-    print("=== Tree")
-    Oak = Tree("Oak", 200.0, 365, 5.0)
-    Oak.show()
-    Oak.produce_shade()
-    print("")
-    print("=== Vegetable")
-    Tomato = Vegetable("Tomato", 5.0, 10, "April")
-    Tomato.show()
-    Tomato.age(20)
-    Tomato.grow()
-    Tomato.show()
+    print("=== Garden statistics ===")
+    print("=== Check year-old")
+    Plant.check_year(30)
+    Plant.check_year(400)
+
