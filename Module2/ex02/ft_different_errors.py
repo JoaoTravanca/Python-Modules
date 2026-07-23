@@ -37,6 +37,7 @@ def test_error_types() -> None:
     garden_operations(4)
     print("Operation completed sucessfully")
 
+
 if __name__ == "__main__":
     print("=== Garden Error Types Demo ===")
     test_error_types()
